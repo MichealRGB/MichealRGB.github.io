@@ -278,8 +278,7 @@
 
       
         
-          
-            <h5 id="此博文为原创，未经博主同意请勿转载"><a href="#此博文为原创，未经博主同意请勿转载" class="headerlink" title="此博文为原创，未经博主同意请勿转载"></a>此博文为原创，未经博主同意请勿转载</h5><hr>
+          <h5 id="此博文为原创，未经博主同意请勿转载"><a href="#此博文为原创，未经博主同意请勿转载" class="headerlink" title="此博文为原创，未经博主同意请勿转载"></a>此博文为原创，未经博主同意请勿转载</h5><hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios,&apos;8.0&apos; </div><div class="line">pod &apos;MagicalRecord&apos;</div></pre></td></tr></table></figure>
 <p><strong>1</strong>.创建Prefix文件</p>
 <hr>
@@ -287,36 +286,11 @@
 <hr>
 <p><strong>3</strong>.AppDelegate.m中初始化<code>[MagicalRecord setupCoreDataStackWithStoreNamed:@&quot;MyDataBase.sqlite&quot;];</code> </p>
 <p><img src="http://od630j1ze.bkt.clouddn.com/m1.jpg" alt=""></p>
-<hr>
-<p><strong>4</strong>.给项目添加CoreData FrameWork，创建工程时请不要勾选CoreData </p>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m2.jpg" alt=""></p>
-<hr>
-<p><strong>5</strong>.创建模型如下图所示</p>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m4.jpg" alt=""></p>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m3.jpg" alt=""></p>
-<hr>
-<p><strong>6</strong>.创建Entity（实体）名称为Coder，里边有两个字段name,skill</p>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m6.jpg" alt=""> </p>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m5.jpg" alt=""></p>
-<hr>
-<p><strong>7</strong>.创建对应类和CoreData方法一样 <img src="http://od630j1ze.bkt.clouddn.com/m7.jpg" alt=""></p>
-<hr>
-<p><strong>8</strong>.插入数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#pragma -</div><div class="line">#pragma mark - 插入数据 -</div><div class="line">- (void) insertData&#123;</div><div class="line"></div><div class="line">    // -- 创建实体对象</div><div class="line">    Coder *coder = [Coder MR_createEntity];</div><div class="line"></div><div class="line">    // -- 赋值</div><div class="line">    [coder setName:@&quot;Micheal&quot;];</div><div class="line"></div><div class="line">    [coder setSkill:@&quot;iOS&quot;];</div><div class="line"></div><div class="line">    // -- 保存</div><div class="line">    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>9</strong>.查找数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#pragma -</div><div class="line">#pragma mark - 查找数据 -</div><div class="line">- (void) searchData&#123;</div><div class="line"></div><div class="line">    // -- MR_findAll 查找所有数据</div><div class="line">    NSArray *allResultArr = [Coder MR_findAll];</div><div class="line"></div><div class="line">    [allResultArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) &#123;</div><div class="line"></div><div class="line">        if (obj &amp;&amp; [obj isKindOfClass:[Coder class]]) &#123;</div><div class="line"></div><div class="line">            Coder *tmpCoder = (Coder *)obj;</div><div class="line"></div><div class="line">            NSLog(@&quot;查询所有数据结果为:name-&gt;%@,skill-&gt;%@&quot;,tmpCoder.name,tmpCoder.skill);</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    /*</div><div class="line"></div><div class="line">    // -- 按照name排序查找 YES为升序，NO为降序</div><div class="line">    NSArray *otherArr = [Coder MR_findAllSortedBy:@&quot;name&quot; ascending:YES];</div><div class="line"></div><div class="line">    // -- 查找第一条数据</div><div class="line">    Coder *firstData = [Coder MR_findFirst];</div><div class="line"></div><div class="line">    // -- 查找name为Micheal这条数据</div><div class="line">    NSArray *otherArr = [Coder MR_findByAttribute:@&quot;name&quot; withValue:@&quot;Micheal&quot;];</div><div class="line"></div><div class="line">     */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m8.jpg" alt=""></p>
-<hr>
-<p><strong>10</strong>.删除数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">#pragma -</div><div class="line">#pragma mark - 删除数据 -</div><div class="line">- (void) deleteData&#123;</div><div class="line"></div><div class="line">    // -- name-&gt;超哥哥,skill-&gt;android</div><div class="line">    // -- 删除skill为android这条数据，因为超哥不会android</div><div class="line">    NSArray *deleteArr = [Coder MR_findByAttribute:@&quot;skill&quot; withValue:@&quot;android&quot;];</div><div class="line"></div><div class="line">    if (deleteArr.count &gt; 0) &#123;</div><div class="line"></div><div class="line">        Coder *deleteCoder = [deleteArr firstObject];</div><div class="line"></div><div class="line">        [deleteCoder MR_deleteEntity];</div><div class="line"></div><div class="line">        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma -</div><div class="line">#pragma mark - 删除所有数据 -</div><div class="line">- (void) deleteAllData&#123;</div><div class="line"></div><div class="line">    NSArray *allResultArr = [Coder MR_findAll];</div><div class="line"></div><div class="line">    [allResultArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) &#123;</div><div class="line"></div><div class="line">        if (obj &amp;&amp; [obj isKindOfClass:[Coder class]]) &#123;</div><div class="line"></div><div class="line">            Coder *deleteCoder = (Coder *)obj;</div><div class="line"></div><div class="line">            [deleteCoder MR_deleteEntity];</div><div class="line"></div><div class="line">            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m9.jpg" alt=""></p>
-<hr>
-<p><strong>11</strong>.更新数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#pragma -</div><div class="line">#pragma mark - 更新数据 -</div><div class="line">- (void) updateData&#123;</div><div class="line"></div><div class="line">    // -- name-&gt;超哥哥,skill-&gt;android</div><div class="line">    // -- 修改skill为android这条数据，skill改成Cocos2d-x</div><div class="line">    NSArray *deleteArr = [Coder MR_findByAttribute:@&quot;skill&quot; withValue:@&quot;android&quot;];</div><div class="line"></div><div class="line">    if (deleteArr.count &gt; 0) &#123;</div><div class="line"></div><div class="line">        Coder *tmpCoder = [deleteArr firstObject];</div><div class="line"></div><div class="line">        [tmpCoder setSkill:@&quot;Cocos2d-x&quot;];</div><div class="line"></div><div class="line">        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m10.jpg" alt=""></p>
-<p><img src="http://od630j1ze.bkt.clouddn.com/m11.jpg" alt=""></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/13/MagicalRecord/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
