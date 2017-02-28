@@ -98,7 +98,7 @@ Masonry是我最喜欢的一个手写代码实现Autolayout的三方库
 Masonry是我最喜欢的一个手写代码实现Autolayout的三方库
 12platform :ios,&amp;apos;8.0&amp;apos;  pod &amp;apos;Masonry&amp;apos;
 我从iphone4开始进行iOS开发，当时的开发工作还比较轻松，因为只有一种设备，后来出了iphone5，屏幕变大了，工作量加重了，因为我们要适配两种设备了，还好，我们可以分别">
-<meta property="og:updated_time" content="2017-02-28T12:47:11.000Z">
+<meta property="og:updated_time" content="2017-02-28T12:50:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Masonry">
 <meta name="twitter:description" content="此博文为原创，未经博主同意请勿转载
@@ -293,6 +293,7 @@ Masonry是我最喜欢的一个手写代码实现Autolayout的三方库
 <p>Masonry是我最喜欢的一个手写代码实现Autolayout的三方库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios,&apos;8.0&apos;  </div><div class="line">pod &apos;Masonry&apos;</div></pre></td></tr></table></figure>
 <p>我从iphone4开始进行iOS开发，当时的开发工作还比较轻松，因为只有一种设备，后来出了iphone5，屏幕变大了，工作量加重了，因为我们要适配两种设备了，还好，我们可以分别计算控件的位置，到后来，出了iphone6，iphone6p，苦逼的日子来了，因为我们要适配iphone4/4s,iphone5/5s,iphone6,iphone6p，还好，我们使用了Autolayout，真特么好用，但是有时候我们手写代码却又不想使用VFL的时候我们就可以选择Masonry这个库~</p>
+<a id="more"></a>
 <p>开始介绍Masonry</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic, strong, readonly) MASConstraint *left;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *top;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *right;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *bottom;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *leading;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *trailing;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *width;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *height;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *centerX;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *centerY;</div><div class="line">@property (nonatomic, strong, readonly) MASConstraint *baseline;</div><div class="line">- (NSArray *)mas_makeConstraints:(void(^)(MASConstraintMaker *make))block;</div><div class="line">- (NSArray *)mas_updateConstraints:(void(^)(MASConstraintMaker *make))block;</div><div class="line">- (NSArray *)mas_remakeConstraints:(void(^)(MASConstraintMaker *make))block;</div></pre></td></tr></table></figure>
 <p>mas_makeConstraints 只负责新增约束，Autolayout不能同时存在两条针对于同一对象的约束，否则会报错 mas_updateConstraints 针对上面的情况，会更新在block中出现的约束，不会导致出现两个相同约束的情况 mas_remakeConstraints 则会清除之前的所有约束仅保留最新的约束</p>
