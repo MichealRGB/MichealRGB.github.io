@@ -84,12 +84,28 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Micheal">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="此博文为原创，未经博主同意请勿转载
+
+Masonry是我最喜欢的一个手写代码实现Autolayout的三方库
+12platform :ios,&amp;apos;8.0&amp;apos;  pod &amp;apos;Masonry&amp;apos;
+我从iphone4开始进行iOS开发，当时的开发工作还比较轻松，因为只有一种设备，后来出了iphone5，屏幕变大了，工作量加重了，因为我们要适配两种设备了，还好，我们可以分别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Masonry">
+<meta property="og:url" content="http://yoursite.com/2015/11/12/Masonry/index.html">
 <meta property="og:site_name" content="Micheal">
+<meta property="og:description" content="此博文为原创，未经博主同意请勿转载
+
+Masonry是我最喜欢的一个手写代码实现Autolayout的三方库
+12platform :ios,&amp;apos;8.0&amp;apos;  pod &amp;apos;Masonry&amp;apos;
+我从iphone4开始进行iOS开发，当时的开发工作还比较轻松，因为只有一种设备，后来出了iphone5，屏幕变大了，工作量加重了，因为我们要适配两种设备了，还好，我们可以分别">
+<meta property="og:updated_time" content="2017-02-28T12:47:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Micheal">
+<meta name="twitter:title" content="Masonry">
+<meta name="twitter:description" content="此博文为原创，未经博主同意请勿转载
+
+Masonry是我最喜欢的一个手写代码实现Autolayout的三方库
+12platform :ios,&amp;apos;8.0&amp;apos;  pod &amp;apos;Masonry&amp;apos;
+我从iphone4开始进行iOS开发，当时的开发工作还比较轻松，因为只有一种设备，后来出了iphone5，屏幕变大了，工作量加重了，因为我们要适配两种设备了，还好，我们可以分别">
 
 
 
@@ -110,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2015/11/12/Masonry/"/>
 
-  <title> Micheal </title>
+  <title> Masonry | Micheal </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -133,9 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,9 +226,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -234,10 +248,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2015/11/12/Masonry/" itemprop="url">
-                  Masonry
-                </a>
+                Masonry
               
             
           </h1>
@@ -277,9 +288,7 @@
       
 
       
-        
-          
-            <p>此博文为原创，未经博主同意请勿转载</p>
+        <p>此博文为原创，未经博主同意请勿转载</p>
 <hr>
 <p>Masonry是我最喜欢的一个手写代码实现Autolayout的三方库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios,&apos;8.0&apos;  </div><div class="line">pod &apos;Masonry&apos;</div></pre></td></tr></table></figure>
@@ -293,16 +302,20 @@
 <p>以下代码即实现上图代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  ViewController.m</div><div class="line">//  MasonryDemo</div><div class="line">//</div><div class="line">//  Created by Micheal on 15/11/12.</div><div class="line">//  Copyright © 2015年 Micheal. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#import &quot;ViewController.h&quot;</div><div class="line">#import &lt;Masonry/Masonry.h&gt;</div><div class="line">#import &lt;MMPlaceHolder/MMPlaceHolder.h&gt;</div><div class="line"></div><div class="line">@interface ViewController ()</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation ViewController</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123;</div><div class="line"></div><div class="line">    [super viewDidLoad];</div><div class="line"></div><div class="line">    /**</div><div class="line">     *  centerView居中显示大小为200*200</div><div class="line">     *</div><div class="line">     *  @return &lt;#return value description#&gt;</div><div class="line">     */</div><div class="line">    UIView *centerView = [[UIView alloc] init];</div><div class="line"></div><div class="line">    [centerView setBackgroundColor:[UIColor redColor]];</div><div class="line"></div><div class="line">    [centerView showPlaceHolder];</div><div class="line"></div><div class="line">    // -- 在AutoLayout前一定要先加载到self.view上</div><div class="line">    [self.view addSubview:centerView];</div><div class="line"></div><div class="line">    [centerView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line"></div><div class="line">        make.center.equalTo(self.view);</div><div class="line">        make.size.mas_equalTo(CGSizeMake(200, 200));</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    /**</div><div class="line">     *  tmpView距离上是20，距离左和右都是10，高是40</div><div class="line">     *</div><div class="line">     *  @return &lt;#return value description#&gt;</div><div class="line">     */</div><div class="line">    UIView *tmpView = [[UIView alloc] init];</div><div class="line"></div><div class="line">    [tmpView setBackgroundColor:[UIColor orangeColor]];</div><div class="line"></div><div class="line">    [tmpView showPlaceHolder];</div><div class="line"></div><div class="line">    [self.view addSubview:tmpView];</div><div class="line"></div><div class="line">    [tmpView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line"></div><div class="line">        make.top.equalTo(self.view).offset(20);</div><div class="line">        make.left.equalTo(self.view).offset(10);</div><div class="line">        make.right.equalTo(self.view).offset(-10);</div><div class="line">        make.height.mas_equalTo(40);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    /**</div><div class="line">     *  两个View等宽等高，高度为80，等间距为10，宽度为约束条件算出</div><div class="line">     *</div><div class="line">     *  @return &lt;#return value description#&gt;</div><div class="line">     */</div><div class="line">    UIView *leftView = [[UIView alloc] init];</div><div class="line"></div><div class="line">    [leftView setBackgroundColor:[UIColor blackColor]];</div><div class="line"></div><div class="line">    [leftView showPlaceHolder];</div><div class="line"></div><div class="line">    UIView *rightView = [[UIView alloc] init];</div><div class="line"></div><div class="line">    [rightView setBackgroundColor:[UIColor blackColor]];</div><div class="line"></div><div class="line">    [rightView showPlaceHolder];</div><div class="line"></div><div class="line">    [self.view addSubview:leftView];</div><div class="line"></div><div class="line">    [self.view addSubview:rightView];</div><div class="line"></div><div class="line">    [leftView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line"></div><div class="line">        make.top.equalTo(tmpView).offset(60);</div><div class="line">        make.left.equalTo(self.view.mas_left).offset(10);</div><div class="line">        make.right.equalTo(rightView.mas_left).offset(-10);</div><div class="line">        make.height.mas_equalTo(80);</div><div class="line">        make.width.equalTo(rightView);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    [rightView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</div><div class="line"></div><div class="line">        make.top.equalTo(leftView);</div><div class="line">        make.left.equalTo(leftView.mas_right).offset(10);</div><div class="line">        make.right.equalTo(self.view.mas_right).offset(-10);</div><div class="line">        make.height.equalTo(leftView);</div><div class="line">        make.width.equalTo(leftView);</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)didReceiveMemoryWarning &#123;</div><div class="line">    [super didReceiveMemoryWarning];</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -310,315 +323,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/04/28/cocoapods-error/" rel="next" title="Cocoapods-error">
+                <i class="fa fa-chevron-left"></i> Cocoapods-error
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2015/04/28/cocoapods-error/" itemprop="url">
-                  Cocoapods-error
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-28T19:56:32+08:00" content="2015-04-28">
-              2015-04-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天在用Cocoapods的时候遇到了这样的问题</p>
-<blockquote>
-<p>“Unable to find a specification for `Masonry”</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/04/28/cocoapods-error/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2015/02/10/install-cocoa/" itemprop="url">
-                  Cocoapods如何安装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-10T14:24:50+08:00" content="2015-02-10">
-              2015-02-10
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>此博文为原创，未经博主同意请勿转载</strong></p>
-<hr>
-<p>如过你没有VPN那么你需要设置一下gem源，我们使用的是淘宝的ruby源，如果你有VPN可以忽略这一步骤</p>
-<p>1.打开你的终端输入<code>gem sources -l</code> </p>
-<p><img src="http://od630j1ze.bkt.clouddn.com/1.png" alt=""></p>
-<p>如果你输入完的结果和上图保持一致的话，那么你不需要更改，注意是<a href="https://ruby.taobao.org/">https://ruby.taobao.org/</a> 原来老的教程讲的是<del><a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></del> 但是<strong>现在淘宝的ruby更新成了HTTPS协议</strong>，所以<strong>原来的已经不能使用</strong>了</p>
-<hr>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/10/install-cocoa/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/01/01/HelloWorld/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-01-01T12:00:00+08:00" content="2015-01-01">
-              2015-01-01
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <hr>
-<p><a href="https://hexo.io/" target="_blank" rel="external">Hero</a> is perfect! I love it!</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -626,6 +356,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -645,8 +379,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://od630j1ze.bkt.clouddn.com/IMG_2468.JPG"
@@ -682,6 +425,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -778,6 +532,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
